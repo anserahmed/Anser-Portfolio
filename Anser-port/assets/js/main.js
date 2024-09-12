@@ -40,83 +40,74 @@ const blurHeader = () => {
 window.addEventListener("scroll", blurHeader);
 
 /*=============== EMAIL JS ===============*/
-const contactForm = document.getElementById("contact-form"),
-  contactMessage = document.getElementById("contact-message");
+function handleSend() {
+  emailjs.init("QHWtNpPK8_Sw4gsga");
+  console.log("daba to ahahi");
+}
 
-const sendEmail = (e) => {
-  e.preventDefault();
-
-  emailjs
-    .sendForm(
-      "service_u6hyrxv",
-      "template_txmfayj",
-      "#contact-form",
-      "QHWtNpPK8_Sw4gsga"
-    )
-
-    .then(
-      () => {
-        // Show sent message
-        contactMessage.textContent = "Message sent successfully✅";
-        setTimeout(() => {
-          contactMessage.textContent = "";
-        }, 5000);
-
-        //clear input fields
-        contactForm.reset();
+document
+  .getElementById("contact-form")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+    emailjs.sendForm("service_outnypw", "template_j9mwyy3", this).then(
+      function (response) {
+        console.log("Email sent!", response.status, response.text);
+        alert("Email sent successfully to anserahmed.777@gmail.com !");
       },
-      () => {
-        // Show error message
-        contactMessage.textContent = "Message not sent❌";
+      function (error) {
+        console.error("Error sending email:", error);
+        alert("Oops! Something went wrong!");
       }
-    )
-};
+    );
+  });
 
 contactForm.addEventListener("submit", sendEmail);
 
 /*=============== SHOW SCROLL UP ===============*/
-const scrollUp = () =>{
-	const scrollUp = document.getElementById('scroll-up')
-    // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
-	this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
-						: scrollUp.classList.remove('show-scroll')
-}
-window.addEventListener('scroll', scrollUp)
-
+const scrollUp = () => {
+  const scrollUp = document.getElementById("scroll-up");
+  // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
+  this.scrollY >= 350
+    ? scrollUp.classList.add("show-scroll")
+    : scrollUp.classList.remove("show-scroll");
+};
+window.addEventListener("scroll", scrollUp);
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
-const sections = document.querySelectorAll('section[id]')
-    
-const scrollActive = () =>{
-  	const scrollDown = window.scrollY
+const sections = document.querySelectorAll("section[id]");
 
-	sections.forEach(current =>{
-		const sectionHeight = current.offsetHeight,
-			  sectionTop = current.offsetTop - 58,
-			  sectionId = current.getAttribute('id'),
-			  sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+const scrollActive = () => {
+  const scrollDown = window.scrollY;
 
-		if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight){
-			sectionsClass.classList.add('active-link')
-		}else{
-			sectionsClass.classList.remove('active-link')
-		}                                                    
-	})
-}
-window.addEventListener('scroll', scrollActive)
+  sections.forEach((current) => {
+    const sectionHeight = current.offsetHeight,
+      sectionTop = current.offsetTop - 58,
+      sectionId = current.getAttribute("id"),
+      sectionsClass = document.querySelector(
+        ".nav__menu a[href*=" + sectionId + "]"
+      );
 
-
+    if (scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight) {
+      sectionsClass.classList.add("active-link");
+    } else {
+      sectionsClass.classList.remove("active-link");
+    }
+  });
+};
+window.addEventListener("scroll", scrollActive);
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 const sr = ScrollReveal({
-origin:'top',
-distance: '60px',
-duration: 2500,
-delay:400,
-reset:true
-})
-sr.reveal(`.home__data, .home__social, .contact__container, .footer__container`)
-sr.reveal(`.home__image`, {origin: 'bottom'})
-sr.reveal(`.about__data, .skills__data` , {origin: 'left'})
-sr.reveal(`.about__image,  .skills__content`, {origin: 'right'})
-sr.reveal(`.services__card, .projects__card`,{interval: 100})
+  origin: "top",
+  distance: "60px",
+  duration: 2500,
+  delay: 400,
+  reset: true,
+});
+sr.reveal(
+  `.home__data, .home__social, .contact__container, .footer__container`
+);
+sr.reveal(`.home__image`, { origin: "bottom" });
+sr.reveal(`.about__data, .skills__data`, { origin: "left" });
+sr.reveal(`.about__image,  .skills__content`, { origin: "right" });
+sr.reveal(`.services__card, .projects__card`, { interval: 100 });

@@ -60,7 +60,7 @@ gsap.from(".about__image", {
   stagger: 0.2,
   scrollTrigger: {
     trigger: ".about__image",
-    markers:true,
+    // markers:true,
     scroller:"body",
     start:"top 20%",
     end:"top -5%",
@@ -77,7 +77,7 @@ gsap.from(".about__data", {
   stagger: 0.2,
   scrollTrigger: {
     trigger: ".about__data",
-    markers:true,
+    // markers:true,
     scroller:"body",
     start:"top 30%",
     end:"top -5%",

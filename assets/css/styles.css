@@ -290,12 +290,13 @@ svg {
   column-gap: 1.25rem;
 }
 .home__social-link {
+  
   display: flex;
-  background-color: var(--first-color-alt);
+  /* background-color: var(--first-color-alt); */
   padding: 0.5rem;
   color: var(--title-color);
   font-size: 1.5rem;
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  /* clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); */
   transition: transform 0.4s;
 }
 .home__social-link:hover {
@@ -303,12 +304,21 @@ svg {
 }
 .home__image {
   justify-self: center;
+  perspective: 900px;
+}
+.home__image:hover{
+  justify-self: center;
+  transition: transform 1500ms;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  transform: rotateY(360deg) rotateZ(180deg) rotateX(180deg) ;
 }
 .home__blob {
   width: 320px;
   fill: var(--first-color);
   filter: drop-shadow(0 12px 12px hsla(var(--hue), 100%, 40%, 0.2));
 }
+
 
 /*=============== BUTTON ===============*/
 .button {
@@ -472,6 +482,10 @@ svg {
 /*=============== CONTACT ===============*/
 .contact__container {
   padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+
 }
 .contact__form,
 .contact__group {
@@ -775,4 +789,11 @@ footer__title {
   .scrollup {
     right: 3rem;
   }
+}
+
+
+#box{
+  width: 300px;
+  height: 300px;
+  background-color: crimson;
 }

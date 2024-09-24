@@ -8,7 +8,7 @@
 
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
-    <!--=============== Email handle form ===============-->
+    <!--=============== GSAP ===============-->
 
     <!--=============== FAVICON ===============-->
     <link
@@ -33,9 +33,10 @@
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
       <nav class="nav container">
-        <a href="#" class="nav__logo"> Anser <span>Ahmed</span> </a>
+        <a href="#" id="anser" class="nav__logo"> Anser <span>Ahmed</span> </a>
+
         <div class="nav__menu" id="nav-menu">
-          <ul class="nav__list">
+          <ul id="nav-list" class="nav__list">
             <li class="nav__item">
               <a href="#home" class="nav__link">Home</a>
             </li>
@@ -53,13 +54,13 @@
             </li>
           </ul>
           <!-- close button -->
-          <div class="nav__close" id="nav-close">
+          <div class="nav__close meenu" id="nav-close">
             <!-- <i class="ri-close-line"></i> -->
             <i class="ri-code-line"></i>
           </div>
         </div>
         <!-- Toggle-button -->
-        <div class="nav__toggle" id="nav-toggle">
+        <div class="nav__toggle meenu" id="nav-toggle">
           <i class="ri-code-s-slash-line"></i>
         </div>
       </nav>
@@ -71,7 +72,7 @@
       <section class="home section" id="home">
         <div class="home__container container grid">
           <div class="home__content">
-            <div class="home__data">
+            <div id="home-data" class="home__data">
               <h3 class="home__subtitle">Hello, <span>I’m</span></h3>
               <h1 class="home__title">Anser Ahmed</h1>
               <h3 class="home__education">Full Stack Developer</h3>
@@ -79,25 +80,28 @@
                 With knowledge in web development and design, I offer the best
                 projects resulting in quality work.
               </p>
-              <a href="#contact" class="button">Lets Connect</a>
+              <a href="#contact" id="letsconnect" class="button"
+                >Lets Connect</a
+              >
             </div>
-            <div class="home__social">
+
+            <div id="home-social" class="home__social">
               <a
                 href="https://www.linkedin.com/in/anser-ahmed-83bba023b/ "
                 target="_blank"
-                class="home__social-link"
+                class="home__social-link links"
                 ><i class="ri-linkedin-box-fill"></i
               ></a>
               <a
                 href="https://www.instagram.com/resnarts/"
                 target="_blank"
-                class="home__social-link"
+                class="home__social-link links"
                 ><i class="ri-instagram-line"></i
               ></a>
               <a
                 href="https://github.com/anserahmed"
                 target="_blank"
-                class="home__social-link"
+                class="home__social-link links"
                 ><i class="ri-github-fill"></i
               ></a>
             </div>
@@ -174,7 +178,7 @@
       <!--==================== ABOUT ====================-->
       <section class="about section" id="about">
         <div class="about__container container grid">
-          <div class="about__data">
+          <div id="about-data" class="about__data">
             <h3 class="section__subtitle">My <span>Intro</span></h3>
             <h2 class="section__title">About</h2>
             <p class="about__description">
@@ -188,7 +192,7 @@
               create dynamic interfaces that captivate users and deliver
               seamless interactions.
             </p>
-            <a href="#contact" class="button">Contact Me</a>
+            <a href="#contact" id="contactme" class="button">Contact Me</a>
           </div>
           <div class="about__image">
             <svg
@@ -285,9 +289,9 @@
               <li class="skills__items">Next.js</li>
               <li class="skills__items">Node.Js</li>
               <li class="skills__items">MongoDB</li>
-              <li class="skills__items">Express.Js</li>
             </ol>
-            <ol class="skills__group" start="9">
+            <ol class="skills__group" start="8">
+              <li class="skills__items">Express.Js</li>
               <li class="skills__items">Tailwind CSS</li>
               <li class="skills__items">Bootstrap</li>
               <li class="skills__items">C++</li>
@@ -314,27 +318,32 @@
               services into web projects.
             </p>
           </article>
-          
-        <article class="services__card">
-          <i class="ri-layout-2-fill"></i>
-          <h2 class="services__title"> Back-End Development</h2>
-          <p class="services__description">
-            I have experience in implementing authentication and authorization mechanisms, ensuring secure access and
-            user management in backend systems.
-            I have a solid understanding of backend technologies, including database management, API development, and
-            server optimization techniques.
-            Creating application backend in Node & Express 
-          </p>
-        </article>
 
-          <!-- <article class="services__card">
-          <i class="ri-layout-2-fill"></i>
-          <h2 class="services__title">Front End Development</h2>
-          <p class="services__description">
-            Development of custom web pages. Using current technologies and
-            libraries of the labor field.
-          </p>
-        </article> -->
+          <article class="services__card">
+            <i class="ri-layout-2-fill"></i>
+            <h2 class="services__title">Back-End Development</h2>
+            <p class="services__description">
+              I have experience in implementing authentication and authorization
+              mechanisms, ensuring secure access and user management in backend
+              systems. I have a solid understanding of backend technologies,
+              including database management, API development, and server
+              optimization techniques. Creating application backend in Node &
+              Express
+            </p>
+          </article>
+
+          <article class="services__card">
+            <i class="ri-layout-2-fill"></i>
+            <h2 class="services__title">Design</h2>
+            <p class="services__description">
+              I design modern, responsive websites that are visually striking
+              and user-friendly. Specializing in custom designs, WordPress
+              development, and e-commerce solutions, I ensure your site is
+              optimized for performance and SEO. With a focus on UI/UX, I create
+              seamless digital experiences that enhance your brand and engage
+              users effectively.
+            </p>
+          </article>
         </div>
       </section>
 
@@ -610,9 +619,21 @@
     <!--=============== SCROLLREVEAL ===============-->
     <script src="/assets/js/scrollreveal.min.js"></script>
 
-    <!--=============== EMAIL JS ===============-->
+    <!--=============== GSAP ===============-->
 
     <!--=============== MAIN JS ===============-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

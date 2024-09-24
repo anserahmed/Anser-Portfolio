@@ -1,3 +1,91 @@
+// GSAP START
+gsap.from("#anser", {
+  y: -50,
+  delay: 0.3,
+  scale: 0.5,
+  opacity: 0,
+  duration: 0.5,
+});
+
+gsap.from("#nav-list li", {
+  y: -50,
+  // scale: 0.5,
+  opacity: 0,
+  duration: 0.4,
+  stagger: 0.2,
+});
+
+var tl = gsap.timeline();
+
+tl.from("#home-data h1,h3,p", {
+  x: -500,
+  scale: 0,
+  opacity: 0,
+  duration: 0.3,
+  stagger: 0.2,
+});
+gsap.from("#letsconnect ", {
+  y: 100,
+  scale: 0,
+  delay: 1,
+  opacity: 0,
+  duration: 0.4,
+  stagger: 0.2,
+});
+gsap.from(".links i", {
+  y: 100,
+  scale: 0,
+  delay: 1.1,
+  opacity: 0,
+  duration: 0.4,
+  stagger: 0.2,
+});
+
+gsap.from(".home__image", {
+  x: 1000,
+  rotate: 360,
+  scale: 2,
+  delay: 0.8,
+  opacity: 0,
+  duration: 0.7,
+  stagger: 0.2,
+});
+
+gsap.from(".about__image", {
+  x: -1000,
+  rotate: 320,
+  scale: 2,
+  opacity: 0,
+  duration: 0.7,
+  stagger: 0.2,
+  scrollTrigger: {
+    trigger: ".about__image",
+    markers:true,
+    scroller:"body",
+    start:"top 20%",
+    end:"top -5%",
+    scrub:3,
+ 
+  },
+});
+gsap.from(".about__data", {
+  x: 100,
+  // rotate: 360,
+  scale: 2,
+  opacity: 0,
+  duration: 0.7,
+  stagger: 0.2,
+  scrollTrigger: {
+    trigger: ".about__data",
+    markers:true,
+    scroller:"body",
+    start:"top 30%",
+    end:"top -5%",
+    scrub:2
+  },
+});
+
+
 /*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById("nav-menu"),
   navToggle = document.getElementById("nav-toggle"),

@@ -62,12 +62,11 @@ gsap.from(".about__image", {
   stagger: 0.2,
   scrollTrigger: {
     trigger: ".about__data",
-    markers:true,
+    // markers: true,
     scroller: "body",
     start: "top 10%",
     end: "top -5%",
     scrub: 3,
-  
   },
 });
 gsap.from(".about__data", {
@@ -79,7 +78,6 @@ gsap.from(".about__data", {
   stagger: 0.2,
   scrollTrigger: {
     trigger: ".about__data",
-    // markers:true,
     scroller: "body",
     start: "top 30%",
     end: "top -5%",
@@ -88,12 +86,11 @@ gsap.from(".about__data", {
 });
 
 gsap.to("#skillh1", {
-  opacity:0,
+  opacity: 0,
   transform: " translateX(-50%)",
   scrollTrigger: {
     trigger: ".skills__heading",
     scroller: "body",
-    // markers: true,
     start: "22%",
     end: "180%",
     scrub: 2,
@@ -103,11 +100,10 @@ gsap.to("#skillh1", {
 
 gsap.to("#skill-box img", {
   transform: "translateX(-1300%)",
-  // delay: ,
   ease: "none",
-  // stagger:0.2,
   repeat: -1,
-  duration: 6,
+  duration: 5,
+  
 
   // yoyo:true
   // scrollTrigger: {

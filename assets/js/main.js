@@ -1,7 +1,7 @@
 // GSAP START
 gsap.from("#anser", {
   y: -50,
-  delay: 0.3,
+  delay: 0.2,
   scale: 0.5,
   opacity: 0,
   duration: 0.5,
@@ -9,25 +9,27 @@ gsap.from("#anser", {
 
 gsap.from("#nav-list li", {
   y: -50,
-  // scale: 0.5,
+  delay: 0.7,
   opacity: 0,
-  duration: 0.4,
+  duration: 0.3,
   stagger: 0.2,
 });
 
+// timeline
 var tl = gsap.timeline();
-
 tl.from("#home-data h1,h3,p", {
+  delay: 1.2,
   x: -500,
   scale: 0,
   opacity: 0,
   duration: 0.3,
   stagger: 0.2,
 });
+
 gsap.from("#letsconnect ", {
   y: 100,
   scale: 0,
-  delay: 1,
+  delay: 1.7,
   opacity: 0,
   duration: 0.4,
   stagger: 0.2,
@@ -35,7 +37,7 @@ gsap.from("#letsconnect ", {
 gsap.from(".links i", {
   y: 100,
   scale: 0,
-  delay: 1.1,
+  delay: 2,
   opacity: 0,
   duration: 0.4,
   stagger: 0.2,
@@ -44,8 +46,8 @@ gsap.from(".links i", {
 gsap.from(".home__image", {
   x: 1000,
   rotate: 360,
-  scale: 2,
-  delay: 0.8,
+  scale: 3,
+  delay: 2,
   opacity: 0,
   duration: 0.7,
   stagger: 0.2,
@@ -59,13 +61,13 @@ gsap.from(".about__image", {
   duration: 0.7,
   stagger: 0.2,
   scrollTrigger: {
-    trigger: ".about__image",
-    // markers:true,
-    scroller:"body",
-    start:"top 20%",
-    end:"top -5%",
-    scrub:3,
- 
+    trigger: ".about__data",
+    markers:true,
+    scroller: "body",
+    start: "top 10%",
+    end: "top -5%",
+    scrub: 3,
+  
   },
 });
 gsap.from(".about__data", {
@@ -78,13 +80,46 @@ gsap.from(".about__data", {
   scrollTrigger: {
     trigger: ".about__data",
     // markers:true,
-    scroller:"body",
-    start:"top 30%",
-    end:"top -5%",
-    scrub:2
+    scroller: "body",
+    start: "top 30%",
+    end: "top -5%",
+    scrub: 2,
   },
 });
 
+gsap.to("#skillh1", {
+  opacity:0,
+  transform: " translateX(-50%)",
+  scrollTrigger: {
+    trigger: ".skills__heading",
+    scroller: "body",
+    // markers: true,
+    start: "22%",
+    end: "180%",
+    scrub: 2,
+    pin: true,
+  },
+});
+
+gsap.to("#skill-box img", {
+  transform: "translateX(-1300%)",
+  // delay: ,
+  ease: "none",
+  // stagger:0.2,
+  repeat: -1,
+  duration: 6,
+
+  // yoyo:true
+  // scrollTrigger: {
+  //   trigger: "#skill-container ",
+  //   scroller: "body",
+  //   markers: true,
+  //   start:"top -150%",
+  //   end:"60%",
+  //   scrub: true,
+  //   pin: true,
+  // },
+});
 
 /*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById("nav-menu"),

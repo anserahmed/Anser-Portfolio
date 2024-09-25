@@ -290,7 +290,6 @@ svg {
   column-gap: 1.25rem;
 }
 .home__social-link {
-  
   display: flex;
   /* background-color: var(--first-color-alt); */
   padding: 0.5rem;
@@ -306,19 +305,18 @@ svg {
   justify-self: center;
   perspective: 900px;
 }
-.home__image:hover{
+.home__image:hover {
   justify-self: center;
   transition: transform 1500ms;
   transform-style: preserve-3d;
   cursor: pointer;
-  transform: rotateY(360deg) rotateZ(180deg) rotateX(180deg) ;
+  transform: rotateY(360deg) rotateZ(180deg) rotateX(180deg);
 }
 .home__blob {
   width: 320px;
   fill: var(--first-color);
   filter: drop-shadow(0 12px 12px hsla(var(--hue), 100%, 40%, 0.2));
 }
-
 
 /*=============== BUTTON ===============*/
 .button {
@@ -349,10 +347,34 @@ svg {
 }
 
 /*=============== SKILLS ===============*/
+
 .skills {
   background-color: var(--container-color);
 }
+
+.skills__heading {
+  padding: 0px 0px;
+  color: var(--first-color);
+  font-size: 30vw;
+  display: flex;
+  font-weight: 800;
+}
+
+#skill-box {
+  display: flex;
+  /* transform: translateX(100%); */
+}
+#skill-box img {
+  /* object-fit: contain; */
+  padding: 30px;
+  height: 40vh;
+  width: 40vh;
+}
 .skills__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0px;
   padding-bottom: 2rem;
   row-gap: 3.5rem;
 }
@@ -485,7 +507,6 @@ svg {
   display: flex;
   justify-content: center;
   justify-items: center;
-
 }
 .contact__form,
 .contact__group {
@@ -789,11 +810,4 @@ footer__title {
   .scrollup {
     right: 3rem;
   }
-}
-
-
-#box{
-  width: 300px;
-  height: 300px;
-  background-color: crimson;
 }

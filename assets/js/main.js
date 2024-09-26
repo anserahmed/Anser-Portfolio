@@ -56,16 +56,16 @@ gsap.from(".home__image", {
 gsap.from(".about__image", {
   x: -1000,
   rotate: 320,
-  scale: 2,
+  scale: 3,
   opacity: 0,
   duration: 0.7,
   stagger: 0.2,
   scrollTrigger: {
     trigger: ".about__data",
-    // markers: true,
+    markers: true,
     scroller: "body",
-    start: "top 10%",
-    end: "top -5%",
+    start: "top -3%",
+    end: "top -10%",
     scrub: 3,
   },
 });
@@ -103,19 +103,192 @@ gsap.to("#skill-box img", {
   ease: "none",
   repeat: -1,
   duration: 5,
-  
-
-  // yoyo:true
-  // scrollTrigger: {
-  //   trigger: "#skill-container ",
-  //   scroller: "body",
-  //   markers: true,
-  //   start:"top -150%",
-  //   end:"60%",
-  //   scrub: true,
-  //   pin: true,
-  // },
 });
+
+gsap.from("#frontt ", {
+  x: 1000,
+  rotate: 10,
+  scrollTrigger: {
+    trigger: ".services__container ",
+    scroller: "body",
+    // markers: true,
+    start: "top 70%",
+    // end: "top 30%",
+    scrub: 3,
+  },
+});
+gsap.from("#backk ", {
+  y: 100,
+  rotate: 20,
+  scrollTrigger: {
+    trigger: ".services__container ",
+    scroller: "body",
+    // markers: true,
+    start: "top 70%",
+    // end: "top 30%",
+    scrub: 3,
+  },
+});
+gsap.from("#designn ", {
+  x: -1000,
+  rotate: -20,
+
+  scrollTrigger: {
+    trigger: ".services__container ",
+    scroller: "body",
+    // markers: true,
+    start: "top 70%",
+    // end: "top 30%",
+    scrub: 3,
+  },
+});
+
+// what i do
+gsap.from("#section-title ", {
+  color: "white",
+  y: 30,
+  scale: 15,
+  opacity: 0,
+  scrollTrigger: {
+    trigger: "#services ",
+    scroller: "body",
+    // markers: true,
+    start: "top 20%",
+    // end: "top 0%",
+    scrub: 1,
+    pin: true,
+  },
+});
+
+gsap.to("#recent-projects", {
+  scale: "30",
+  y: "10",
+  backgroundColor: "white",
+  // color:"hsl(250, 100%, 75%)",
+  transform: "translateX(-210%)",
+  opacity: 0,
+  scrollTrigger: {
+    trigger: "#projects",
+    scroller: "body",
+    scrub: 1,
+    // pin:true,
+    // markers:true,
+    start: "top 0%",
+    // end:" 1000%"
+  },
+});
+
+// projects
+var projecttl = gsap.timeline();
+
+projecttl.from(".projects__container article", {
+  opacity:0,
+  scale:"20",
+  stagger:0.2,
+  scrollTrigger: {
+    trigger: ".projects__container",
+    scroller:"body",
+    scrub:2,
+    start:"top 20%",
+    end:"400%",
+    // markers:true,
+    pin:true
+  },
+});
+
+// projecttl.from("#pro2", {
+//   // z:"20",
+//   opacity: 0,
+//   scale: "20",
+//   // stagger:0.2,
+//   scrollTrigger: {
+//     trigger: ".projects__container",
+//     scroller: "body",
+//     scrub: 1,
+//     start: "top 20%",
+//     end: "300%",
+//     // markers:true,
+//     pin: true,
+//   },
+// });
+// projecttl.from("#pro1", {
+//   opacity: 0,
+//   x: "300",
+//   scrollTrigger: {
+//     trigger: ".projects__container",
+//     scroller: "body",
+//     scrub: true,
+//     start: "top 20%",
+//     end: "300%",
+//     // markers:true,
+//     // pin: true,
+//   },
+// });
+// projecttl.from("#pro3", {
+//   opacity: 0,
+//   x: "-300",
+//   scrollTrigger: {
+//     trigger: ".projects__container",
+//     scroller: "body",
+//     scrub: true,
+//     start: "top 20%",
+//     end: "300%",
+//     // markers:true,
+//     // pin: true,
+//   },
+// });
+// projecttl.from("#pro5", {
+//   opacity: 0,
+//   y: "-200",
+//   scrollTrigger: {
+//     trigger: ".projects__container",
+//     scroller: "body",
+//     scrub: true,
+//     start: "top 20%",
+//     end: "300%",
+//     // markers:true,
+//     // pin: true,
+//   },
+// });
+// projecttl.from("#pro4", {
+//   opacity: 0,
+//   // y: "-200",
+//   scrollTrigger: {
+//     trigger: ".projects__container",
+//     scroller: "body",
+//     scrub: true,
+//     start: "top 20%",
+//     end: "300%",
+//     // markers:true,
+//     // pin: true,
+//   },
+// });
+// projecttl.from("#pro6", {
+//   opacity: 0,
+//   // y: "-200",
+//   scrollTrigger: {
+//     trigger: ".projects__container",
+//     scroller: "body",
+//     scrub: true,
+//     start: "top 20%",
+//     end: "300%",
+//     // markers:true,
+//     // pin: true,
+//   },
+// });
+// projecttl.from("#pro7", {
+//   opacity: 0,
+//   // y: "-200",
+//   scrollTrigger: {
+//     trigger: ".projects__container",
+//     scroller: "body",
+//     scrub: true,
+//     start: "top 20%",
+//     end: "300%",
+//     // markers:true,
+//     // pin: true,
+//   },
+// });
 
 /*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById("nav-menu"),

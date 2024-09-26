@@ -129,13 +129,12 @@ svg {
 }
 
 .section {
-  padding-block: 5rem 2rem;
+  /* padding-block: 5rem 2rem; */
 }
 
 .section__title,
 .section__subtitle {
   text-align: center;
-  color: var(--title-color);
   font-weight: var(--font-semi-bold);
 }
 
@@ -146,7 +145,7 @@ svg {
 
 .section__subtitle {
   font-size: var(--small-font-size);
-  margin-bottom: 0.25rem;
+  /* margin-bottom: 0.25rem; */
 }
 
 .section__subtitle span {
@@ -407,6 +406,11 @@ svg {
   color: var(--first-color);
 }
 /*=============== SERVICES ===============*/
+
+#section-title {
+  color: hsl(250, 100%, 75%);
+
+}
 .services__container {
   row-gap: 2rem;
   padding-block: 1rem;
@@ -427,23 +431,36 @@ svg {
 }
 .services__title {
   font-size: var(--h2-font-size);
-  margin-bottom: 1.5rem;
+  /* margin-bottom: 1.5rem; */
 }
 
 .services__card:hover {
-  border: 2px solid var(--first-color);
+  border: 2px solid hsl(250, 100%, 75%);
 }
 /*=============== PROJECTS ===============*/
 
 .projects {
   background-color: var(--container-color);
 }
+#recent-projects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 19vw;
+  font-weight: 600;
+  /* overflow: hidden; */
+ padding: 0px 50px;
+}
 .projects__container {
   row-gap: 2rem;
   justify-content: center;
   padding-block: 1rem;
 }
+#pro2{
+  /* z-index: 20; */
+}
 .projects__card {
+  z-index: 0;
   size: 10px;
   display: flex;
   flex-wrap: wrap;

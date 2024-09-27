@@ -342,6 +342,7 @@ svg {
 }
 .connect__button {
   display: flex;
+  /* justify-content: center; */
   gap: 17px;
   color: white;
   align-items: center;

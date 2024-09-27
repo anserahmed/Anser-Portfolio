@@ -29,8 +29,7 @@
     <title>Anser Portfolio</title>
   </head>
 
-  <body>
-    <div id="cursor"></div>
+  <body id="main">
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
       <nav class="nav container">
@@ -69,21 +68,32 @@
 
     <!--==================== MAIN ====================-->
     <main class="main">
+      <span id="cursor"
+        ><img src="./assets/img/skills/react.png" alt=""
+      /></span>
+
       <!--==================== HOME ====================-->
       <section class="home section" id="home">
         <div class="home__container container grid">
           <div class="home__content">
             <div id="home-data" class="home__data">
-              <h3 class="home__subtitle">Hello, <span>I’m</span></h3>
-              <h1 class="home__title">Anser Ahmed</h1>
-              <h3 class="home__education">Full Stack Developer</h3>
-              <p class="home__description">
+              <h3 id="helloiam" class="home__subtitle">
+                Hello, <span>I’m</span>
+              </h3>
+              <h1 id="anserahmed" class="home__title">Anser Ahmed</h1>
+              <h3 id="fullstack" class="home__education">
+                Full Stack Developer
+              </h3>
+              <p id="homepara" class="home__description">
                 With knowledge in web development and design, I offer the best
                 projects resulting in quality work.
               </p>
-              <a href="#contact" id="letsconnect" class="button"
-                >Lets Connect</a
-              >
+              <div  id="connect-button" class="connect__button">
+                <a href="#contact" id="letsconnect" class="button"
+                  >Lets Connect
+                </a>
+                <img id="arrow" src="./assets/img/share.png" alt="">
+              </div>
             </div>
 
             <div id="home-social" class="home__social">
@@ -322,7 +332,7 @@
             </p>
           </article>
 
-          <article id="backk"  class="services__card">
+          <article id="backk" class="services__card">
             <i class="ri-layout-2-fill"></i>
             <h2 class="services__title">Back-End Development</h2>
             <p class="services__description">
@@ -335,7 +345,7 @@
             </p>
           </article>
 
-          <article id="designn"  class="services__card">
+          <article id="designn" class="services__card">
             <i class="ri-layout-2-fill"></i>
             <h2 class="services__title">Design</h2>
             <p class="services__description">
@@ -544,8 +554,10 @@
       <!--==================== CONTACT ====================-->
 
       <section class="contact section" id="contact">
-        <h3 class="section__subtitle">Get In <span>Touch</span></h3>
-        <h2 class="section__title">Contact Me</h2>
+        <h3 id="getintouch" class="section__subtitle">
+          Get In <span>Touch</span>
+        </h3>
+        <h2 id="contactme" class="section__title">Contact Me</h2>
         <div class="contact__container container grid">
           <form action="" class="contact__form" id="contact-form">
             <div class="contact__group">
@@ -591,26 +603,26 @@
     <footer class="footer">
       <div class="footer__container container grid">
         <div>
-          <h1 class="footer__title">Anser <span>Ahmed</span></h1>
-          <h2 class="fotter__title">Front-End Developer</h2>
+          <h1 class="footer__title footer__elem">Anser <span>Ahmed</span></h1>
+          <h2 class="footer__title footer__elem">Front-End Developer</h2>
         </div>
         <div class="footer__social">
-          <a href="" target="_blank" class="footer__social-link"
+          <a href="" target="_blank" class="footer__elem footer__social-link"
             ><i class="ri-facebook-box-fill"></i
           ></a>
           <a
             href="https://www.instagram.com/resnarts/"
             target="_blank"
-            class="footer__social-link"
+            class="footer__social-link footer__elem"
             ><i class="ri-instagram-line"></i
           ></a>
-          <a href="" target="_blank" class="footer__social-link"
+          <a href="" target="_blank" class="footer__elem footer__social-link"
             ><i class="ri-twitter-fill"></i
           ></a>
         </div>
 
         <span class="footer__copy">
-          &#169; Copyright Anser. All rights reserved
+          <span id="copyy">&#169;</span> Copyright Anser. All rights reserved
         </span>
       </div>
     </footer>

@@ -1,4 +1,52 @@
 // GSAP START
+// gsap.registerPlugin(ScrambleTextPlugin) ;
+
+document.querySelector("#main").addEventListener("mousemove", function (dets) {
+  gsap.to("#cursor", {
+    x: dets.x,
+    y: dets.y,
+    duration: 2.5,
+    ease: "elastic.out(1.75,0.75)",
+  });
+});
+
+document
+  .querySelector("#fullstack")
+  .addEventListener("mouseenter", function (dets) {
+    gsap.to("#cursor", {
+      scale: 2,
+    });
+  });
+document
+  .querySelector("#fullstack")
+  .addEventListener("mouseleave", function (dets) {
+    gsap.to("#cursor", {
+      scale: 1,
+      color: "red",
+    });
+  });
+
+document
+  .querySelector("#letsconnect")
+  .addEventListener("mouseenter", function (dets) {
+    console.log("dbaya gya");
+    gsap.to("#arrow", {
+      x:-100,
+      y:50,
+      rotate: "270",
+    });
+  });
+  document
+  .querySelector("#letsconnect")
+  .addEventListener("mouseleave", function (dets) {
+    console.log("hatay gya");
+    gsap.to("#arrow", {
+      x:0,
+      y:0,
+      rotate: "0",
+    });
+  });
+
 gsap.from("#anser", {
   y: -50,
   delay: 0.2,
@@ -17,13 +65,56 @@ gsap.from("#nav-list li", {
 
 // timeline
 var tl = gsap.timeline();
-tl.from("#home-data h1,h3,p", {
+tl.from("#helloiam", {
   delay: 1.2,
   x: -500,
   scale: 0,
   opacity: 0,
   duration: 0.3,
+  stagger: 3,
+});
+tl.from("#anserahmed", {
+  // delay: 1.2,
+  x: -500,
+  scale: 0,
+  opacity: 0,
+  duration: 0.3,
   stagger: 0.2,
+});
+tl.from("#fullstack", {
+  // delay: 1.2,
+  x: -3,
+  scale: 0,
+  opacity: 0,
+  duration: 0.3,
+  // stagger: 0.2,
+});
+tl.from("#homepara", {
+  // delay: 1.2,
+  x: -500,
+  scale: 0,
+  opacity: 0,
+  duration: 0.3,
+  stagger: 0.2,
+});
+tl.from("#arrow", {
+  // delay: 1.2,
+  x: 100,
+  scale: 0,
+  rotate:"-360",
+  opacity: 0,
+  duration: 0.3,
+  stagger: 0.2,
+});
+
+tl.from("#fullstack", {
+  y: -3,
+  yoyo: true,
+  repeat: "-1",
+  rotate: -2,
+  ease: "none",
+  duration: 2,
+  backgroundColor: "rgb(253, 154, 118)",
 });
 
 gsap.from("#letsconnect ", {
@@ -53,25 +144,23 @@ gsap.from(".home__image", {
   stagger: 0.2,
 });
 
+// about
 gsap.from(".about__image", {
-  x: -1000,
-  rotate: 320,
+  x: -100,
+  rotate: 120,
   scale: 3,
   opacity: 0,
-  duration: 0.7,
   stagger: 0.2,
   scrollTrigger: {
     trigger: ".about__data",
-    markers: true,
     scroller: "body",
-    start: "top -3%",
+    start: "top 50%",
     end: "top -10%",
     scrub: 3,
   },
 });
 gsap.from(".about__data", {
   x: 100,
-  // rotate: 360,
   scale: 2,
   opacity: 0,
   duration: 0.7,
@@ -79,8 +168,8 @@ gsap.from(".about__data", {
   scrollTrigger: {
     trigger: ".about__data",
     scroller: "body",
-    start: "top 30%",
-    end: "top -5%",
+    start: "top 50%",
+    end: "top -10%",
     scrub: 2,
   },
 });
@@ -146,7 +235,7 @@ gsap.from("#designn ", {
 // what i do
 gsap.from("#section-title ", {
   color: "white",
-  y: 30,
+  y: 5,
   scale: 15,
   opacity: 0,
   scrollTrigger: {
@@ -161,10 +250,9 @@ gsap.from("#section-title ", {
 });
 
 gsap.to("#recent-projects", {
-  scale: "30",
-  y: "10",
-  backgroundColor: "white",
-  // color:"hsl(250, 100%, 75%)",
+  // ease: "bounce.out",
+  scale: "50",
+  color: "hsl(250, 100%, 75%)",
   transform: "translateX(-210%)",
   opacity: 0,
   scrollTrigger: {
@@ -173,122 +261,229 @@ gsap.to("#recent-projects", {
     scrub: 1,
     // pin:true,
     // markers:true,
-    start: "top 0%",
-    // end:" 1000%"
+    start: " 20%",
+    // end:" 80%"
   },
 });
 
 // projects
 var projecttl = gsap.timeline();
 
-projecttl.from(".projects__container article", {
-  opacity:0,
-  scale:"20",
-  stagger:0.2,
+// projecttl.from(".projects__container article", {
+//   opacity:0,
+//   scale:"20",
+//   stagger:0.2,
+//   scrollTrigger: {
+//     trigger: ".projects__container",
+//     scroller:"body",
+//     scrub:2,
+//     start:"top 20%",
+//     end:"400%",
+//     // markers:true,
+//     pin:true
+//   },
+// });
+
+projecttl.from("#pro2", {
+  scale: "20",
+  opacity: 0,
   scrollTrigger: {
     trigger: ".projects__container",
-    scroller:"body",
-    scrub:2,
-    start:"top 20%",
-    end:"400%",
+    scroller: "body",
+    scrub: 1,
+    start: "top 20%",
+    end: "200%",
     // markers:true,
-    pin:true
+    pin: true,
+  },
+});
+projecttl.from("#pro1", {
+  opacity: 0,
+  x: "300",
+  scrollTrigger: {
+    trigger: ".projects__container",
+    scroller: "body",
+    scrub: true,
+    start: "top 20%",
+    end: "200%",
+    // markers:true,
+    // pin: true,
+  },
+});
+projecttl.from("#pro3", {
+  opacity: 0,
+  x: "-300",
+  scrollTrigger: {
+    trigger: ".projects__container",
+    scroller: "body",
+    scrub: true,
+    start: "top 20%",
+    end: "200%",
+    // markers:true,
+    // pin: true,
+  },
+});
+projecttl.from("#pro5", {
+  opacity: 0,
+  y: "-200",
+  scrollTrigger: {
+    trigger: ".projects__container",
+    scroller: "body",
+    scrub: true,
+    start: "top 20%",
+    end: "300%",
+    // markers:true,
+    // pin: true,
+  },
+});
+projecttl.from("#pro4", {
+  opacity: 0,
+  // y: "-200",
+  scrollTrigger: {
+    trigger: ".projects__container",
+    scroller: "body",
+    scrub: true,
+    start: "top 20%",
+    end: "300%",
+    // markers:true,
+    // pin: true,
+  },
+});
+projecttl.from("#pro6", {
+  opacity: 0,
+  // y: "-200",
+  scrollTrigger: {
+    trigger: ".projects__container",
+    scroller: "body",
+    scrub: true,
+    start: "top 20%",
+    end: "300%",
+    // markers:true,
+    // pin: true,
+  },
+});
+projecttl.from("#pro7", {
+  opacity: 0,
+  // y: "-200",
+  scrollTrigger: {
+    trigger: ".projects__container",
+    scroller: "body",
+    scrub: true,
+    start: "top 20%",
+    end: "300%",
+    // markers:true,
+    // pin: true,
   },
 });
 
-// projecttl.from("#pro2", {
-//   // z:"20",
-//   opacity: 0,
-//   scale: "20",
-//   // stagger:0.2,
-//   scrollTrigger: {
-//     trigger: ".projects__container",
-//     scroller: "body",
-//     scrub: 1,
-//     start: "top 20%",
-//     end: "300%",
-//     // markers:true,
-//     pin: true,
-//   },
-// });
-// projecttl.from("#pro1", {
-//   opacity: 0,
-//   x: "300",
-//   scrollTrigger: {
-//     trigger: ".projects__container",
-//     scroller: "body",
-//     scrub: true,
-//     start: "top 20%",
-//     end: "300%",
-//     // markers:true,
-//     // pin: true,
-//   },
-// });
-// projecttl.from("#pro3", {
-//   opacity: 0,
-//   x: "-300",
-//   scrollTrigger: {
-//     trigger: ".projects__container",
-//     scroller: "body",
-//     scrub: true,
-//     start: "top 20%",
-//     end: "300%",
-//     // markers:true,
-//     // pin: true,
-//   },
-// });
-// projecttl.from("#pro5", {
-//   opacity: 0,
-//   y: "-200",
-//   scrollTrigger: {
-//     trigger: ".projects__container",
-//     scroller: "body",
-//     scrub: true,
-//     start: "top 20%",
-//     end: "300%",
-//     // markers:true,
-//     // pin: true,
-//   },
-// });
-// projecttl.from("#pro4", {
-//   opacity: 0,
-//   // y: "-200",
-//   scrollTrigger: {
-//     trigger: ".projects__container",
-//     scroller: "body",
-//     scrub: true,
-//     start: "top 20%",
-//     end: "300%",
-//     // markers:true,
-//     // pin: true,
-//   },
-// });
-// projecttl.from("#pro6", {
-//   opacity: 0,
-//   // y: "-200",
-//   scrollTrigger: {
-//     trigger: ".projects__container",
-//     scroller: "body",
-//     scrub: true,
-//     start: "top 20%",
-//     end: "300%",
-//     // markers:true,
-//     // pin: true,
-//   },
-// });
-// projecttl.from("#pro7", {
-//   opacity: 0,
-//   // y: "-200",
-//   scrollTrigger: {
-//     trigger: ".projects__container",
-//     scroller: "body",
-//     scrub: true,
-//     start: "top 20%",
-//     end: "300%",
-//     // markers:true,
-//     // pin: true,
-//   },
-// });
+gsap.from("#getintouch", {
+  // scale: "50",
+  y: "-14vw",
+  opacity: 0,
+  scrollTrigger: {
+    ease: "bounce.out",
+    trigger: "#contact",
+    scroller: "body",
+    scrub: 1,
+    start: " 45%",
+    end: " 0%",
+    // pin:true,
+  },
+});
+gsap.from("#contactme", {
+  // scale: "50",
+  y: "10vw",
+  opacity: 0,
+  scrollTrigger: {
+    ease: "bounce.out",
+    trigger: "#contact",
+    // markers:true,
+    scroller: "body",
+    scrub: 1,
+    start: " 40%",
+    end: " 0%",
+    // pin:true,
+  },
+});
+
+var contacttl = gsap.timeline();
+contacttl.from("#contact-form input", {
+  x: "80",
+  rotate: "8",
+  opacity: 0,
+  stagger: 0.2,
+  scrollTrigger: {
+    trigger: ".contact__container",
+    scroller: "body",
+    scrub: 1,
+    // markers: true,
+    start: "top 70%",
+    end: "top 30%",
+    // pin: true,
+  },
+});
+contacttl.from("#contact-form textarea", {
+  x: "-80",
+  rotate: "-8",
+  opacity: 0,
+  scrollTrigger: {
+    trigger: ".contact__container",
+    scroller: "body",
+    scrub: 1,
+    // markers: true,
+    start: "top 45%",
+    end: "top 20%",
+    // pin: true,
+  },
+});
+contacttl.from("#contact-form button", {
+  y: "-80",
+  scale: "2",
+  rotate: "8",
+  opacity: 0,
+  scrollTrigger: {
+    trigger: ".contact__container",
+    scroller: "body",
+    scrub: 1,
+    // markers: true,
+    start: "top 40%",
+    end: "top 10%",
+    // pin: true,
+  },
+});
+var footertl = gsap.timeline();
+footertl.from(".footer__elem ", {
+  // repeat:-1,
+  y: "-50",
+  // rotate: "-30",
+  scale: "1.5",
+  opacity: 0,
+  scrollTrigger: {
+    trigger: ".footer",
+    scroller: "body",
+    scrub: 1,
+    // markers: true,
+    // pin: true,
+    start: "top 90%",
+    end: "top 67%",
+  },
+});
+footertl.from(".footer__copy ", {
+  // repeat:-1,
+  x: "100",
+  // rotate: "-30",
+  scale: "1.5",
+  opacity: 0,
+  scrollTrigger: {
+    trigger: ".footer",
+    scroller: "body",
+    scrub: 1,
+    // markers: true,
+    // pin: true,
+    start: "top 90%",
+    end: "top 67%",
+  },
+});
 
 /*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById("nav-menu"),

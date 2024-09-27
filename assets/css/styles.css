@@ -129,7 +129,7 @@ svg {
 }
 
 .section {
-  /* padding-block: 5rem 2rem; */
+  padding-block: 5rem 2rem;
 }
 
 .section__title,
@@ -252,6 +252,16 @@ svg {
   color: var(--first-color);
 }
 
+#cursor {
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  color: rgb(172, 24, 24);
+  position: fixed;
+  z-index: 50;
+  font-size: xx-large;
+  font-weight: 800;
+}
 /*=============== HOME ===============*/
 .home {
   background-color: var(--container-color);
@@ -270,6 +280,20 @@ svg {
 .home__subtitle,
 .home__education {
   font-size: var(--bigger-font-size);
+}
+#helloiam {
+  background-color: cadetblue;
+  padding: 1px 10px;
+}
+
+#fullstack {
+  background-color: rgb(251, 125, 80);
+  margin: 10px 0px;
+  border-radius: 10px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  /* padding: 2px 10px; */
 }
 
 .home__subtitle span,
@@ -315,6 +339,19 @@ svg {
   width: 320px;
   fill: var(--first-color);
   filter: drop-shadow(0 12px 12px hsla(var(--hue), 100%, 40%, 0.2));
+}
+.connect__button {
+  display: flex;
+  gap: 17px;
+  color: white;
+  align-items: center;
+}
+.connect__button img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 7%;
+  width: 7%;
 }
 
 /*=============== BUTTON ===============*/
@@ -370,6 +407,9 @@ svg {
   height: 40vh;
   width: 40vh;
 }
+#skillh1 {
+  color: rgb(253, 154, 118);
+}
 .skills__container {
   display: flex;
   justify-content: center;
@@ -409,7 +449,6 @@ svg {
 
 #section-title {
   color: hsl(250, 100%, 75%);
-
 }
 .services__container {
   row-gap: 2rem;
@@ -449,15 +488,17 @@ svg {
   font-size: 19vw;
   font-weight: 600;
   /* overflow: hidden; */
- padding: 0px 50px;
+  /* padding: 0px 50px; */
 }
 .projects__container {
+  display: grid;
+  flex-wrap: wrap;
   row-gap: 2rem;
   justify-content: center;
   padding-block: 1rem;
 }
-#pro2{
-  /* z-index: 20; */
+#pro2 {
+  z-index: 20;
 }
 .projects__card {
   z-index: 0;
@@ -520,6 +561,10 @@ svg {
   bottom: 0;
 }
 /*=============== CONTACT ===============*/
+#getintouch {
+  font-size: 10vw;
+  padding-top: 50px;
+}
 .contact__container {
   padding-top: 1rem;
   display: flex;

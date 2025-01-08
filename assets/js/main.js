@@ -284,7 +284,7 @@ var projecttl = gsap.timeline();
 //   },
 // });
 
-projecttl.from("#pro2", {
+projecttl.from("#pro1", {
   scale: "20",
   opacity: 0,
   scrollTrigger: {
